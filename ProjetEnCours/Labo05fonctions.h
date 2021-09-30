@@ -5,3 +5,5 @@
 
 int maximum(int entier1, int entier2, int entier3);
 unsigned int factorielle(int nb);
+int quelmois(int jour, int mois, int annee);
+bool pairouimpair(int nb);
