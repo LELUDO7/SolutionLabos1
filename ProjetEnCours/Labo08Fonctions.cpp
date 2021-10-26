@@ -1,4 +1,6 @@
+#include "Labo08Fonctions.h"
+
 int genererAlea(int min, int max)
 {
-   return 0;
+   return  rand() % (max - min + 1) + min;
 }
