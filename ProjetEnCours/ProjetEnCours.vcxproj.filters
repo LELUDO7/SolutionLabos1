@@ -18,6 +18,9 @@
     <ClCompile Include="Labo08Aleatoire.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Labo08Fonctions.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Labo08Fonctions.h">

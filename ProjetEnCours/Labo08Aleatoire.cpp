@@ -11,16 +11,23 @@ int main()
    
    //déclaation des varables 
    int alea;
+   int min;
+   int max;
 
-   srand(1000);
+   cout << "Veuillez entrer un min : ";
+   cin >> min;
+
+   cout << "Veuillez entrer un max : ";
+   cin >> max;
+
 
    alea = rand();
 
    cout << "premier nombre aléatoire : " << alea << endl;
 
-   for (int i = 0; i < 10; i++)
+   for (int i = 0; i < 20; i++)
    {
-      cout << "Valeur aléatoire #" << i + 1 << " : " << rand() << endl;
+      cout << "Valeur aléatoire #" << i + 1 << " : " << genererAlea(min, max) << endl;
    }
 
    cout << "Le maximum pour les valeurs aléatoires : " << RAND_MAX << endl;
