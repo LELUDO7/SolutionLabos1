@@ -14,10 +14,12 @@ int main()
    
 
    // Déclaration des constantes
-   const int NB_ETUDIANT = 5;
+   const int NB_ETUDIANT = 2;
 
    // Déclaration des variables
    int nbValeurs;
+   double note;
+   double moyenne = 0;
 
    vector<double> vecNote;     // Ici on a déclaré un contenant pouvant recevoir des doubles. Mais pour l'instant le contenant est vide.
 
@@ -36,7 +38,7 @@ int main()
    vector<string> vecPage{"Bonjour", " à ", "tous ! \n\n\n"};
 
 
-
+   /*
    // Apprendre à afficher le contenu d'un vecteur
    for (int i = 0; i < vecNote.size(); i++)
    {
@@ -64,9 +66,41 @@ int main()
       cout << vecPage.at(x);
    }
 
-   // Apprendre à modifier le contenue d'un vecteur
+   // Apprendre à modifier le contenue d'un vecteur contenant des éléments
+   for (int i = 0; i < vecEntier.size(); i++)
+   {
+      cout << "Veuillez entrer la valeur #" << i + 1 << " : ";
+      cin >> vecEntier.at(i);
+   }
+
+   for (int i = 0; i < vecEntier.size(); i++)
+   {
+      cout << "contenue de l'élément #" << i + 1 << " est " << vecEntier[i] << endl;
+   }
+   */
+   for (int i = 0; i < NB_ETUDIANT; i++)
+   {
+      cout << "Veuillez entrer la note de l'étudiant #" << i + 1 << " : ";
+      cin >> note;
+      // On ajoute un ecase dans le vecteur. La case s'ajoute à la fin et on l'initialise avec la valeur passé en paramètre
+      vecNote.push_back(note);
+   }
+
+   for (int i = 0; i < NB_ETUDIANT; i++)
+   {
+      cout << "l'étudiant #" << i + 1 << " a obtenu la note de  " << vecNote[i] << endl;
+   }
+
+   for (int i = 0; i < NB_ETUDIANT; i++)
+   {
+    moyenne = moyenne + vecNote[i];
+   }
 
 
+   cout << "La moyenne est de : " << (moyenne / NB_ETUDIANT) << endl;
+
+
+   // On veut calculer la moyenne du groupe
 
 
 
