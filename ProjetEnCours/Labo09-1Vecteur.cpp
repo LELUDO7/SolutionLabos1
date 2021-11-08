@@ -21,7 +21,8 @@ int main()
    
    //Déclaration des variable
    vector<int> vec{ 12,0,42,0,0,68,0,-15,89,0,0,0,13,27,52,2,0,7,0,0 };
-
+   vector<string> vecmots{"Bonjour", "Salut", "Bienvenue", "yoo"};
+   /*
    //1.Afficher la taille du vecteur.
    cout << "exercise #1\n\n";
    
@@ -46,12 +47,12 @@ int main()
 
    cout << "vec contien " << calculerFrequence(vec, 0) << " case avec la valeur nulle" << endl;
    
-  /*
+  
    //5.Afficher le numéro de la case et son contenu sous la forme vec[#] = Valeur.
    cout << "exercise #5\n\n";
 
    afficherContenu(vec, true);
-   */
+   
 
    //6.Afficher les cases du vecteur dont le contenu est pair.
    cout << "exercise #6\n\n";
@@ -62,7 +63,21 @@ int main()
    cout << "exercise #7\n\n";
 
    afficherParLafin(vec, true);
+   */
+   //Fonction qui suprime les case contenant une certaine valeurs passée en paramètre par exemple 0
 
+   supprimerValeur3(vec, 0);
+   cout << "contenue de vec après suppression" << endl;
+   afficherContenu(vec, true);
+
+   afficherContenu(vecmots, true);
+   
+   int R = 10;
+   int B = 20;
+
+   cout << "Avant R = " << R << " B = " << B << endl;
+   echanger(B, R);
+   cout << "Après R = " << R << " B = " << B << endl;
 
    system("pause");
    return 0;
