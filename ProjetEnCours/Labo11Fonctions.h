@@ -66,8 +66,11 @@ ifstream ouvrirFichierEnLecture(string nomFichier);
 ofstream ouvrirFichierEnEcriture(string nomFichier);
 
 void ecrireEnTete(ofstream& canal, int nbDecimales);
+void ecrireEnregistrement(ofstream& canal, info EtudiantEnCours);
+void ecrirePiedDepage(ofstream& canal, stats moyenne);
 
 void lireEnregistrement(ifstream& canal, info& EtudiantEnCours);
 info lireEnregistrement(ifstream& canal);
 
-void calculerResultats(info EtudiantEnCours, stats& resultats);
+void calculerSomme(info EtudiantEnCours, stats& resultats);
+void calculerMoyenne(stats& moyenne);

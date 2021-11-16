@@ -65,6 +65,23 @@ void ecrireEnTete(ofstream& canal, int nbDecimales)
     canal << setfill(MOTIF1) << setw(LARGEUR) << "" << endl;
 }
 
+void ecrireEnregistrement(ofstream& canal, info EtudiantEnCours)
+{
+    double total = EtudiantEnCours.examen1 + EtudiantEnCours.examen2 + EtudiantEnCours.examenFinal;
+
+    canal << setfill(MOTIF2) << left << setw(COL1) << EtudiantEnCours.etudiant << right << setw(COL2) << EtudiantEnCours.examen1 << setw(COL3) << EtudiantEnCours.examen2 << setw(COL4) << EtudiantEnCours.examenFinal;
+    canal << setw(COL5) << total << setw(COL6) << (total >= NOTE_PASSAGE ? OK : KO) << endl;
+
+}
+
+void ecrirePiedDepage(ofstream& canal, stats moyenne)
+{
+    canal << setfill(MOTIF1) << setw(LARGEUR) << "" << endl;
+    canal << STAT << endl;
+    canal << setfill(MOTIF2) << left << setw(COL1) << MOYENNE << right << setw(COL2) << moyenne.moyenne1 << setw(COL3) << moyenne.moyenne2 << setw(COL4) << moyenne.moyenne3 << setw(COL5) << moyenne.moyenneTotal << endl;
+    canal << setfill(MOTIF1) << setw(LARGEUR) << "" << endl;
+}
+
 void lireEnregistrement(ifstream& canal, info& EtudiantEnCours)
 {
     // On va lire le enregistrement mais il se peut que le fichier soit vide et que le enregistrement n'existe pas
@@ -91,7 +108,7 @@ info lireEnregistrement(ifstream& canal)
     return EtudiantEnCours;
 }
 
-void calculerResultats(info EtudiantEnCours, stats& resultats)
+void calculerSomme(info EtudiantEnCours, stats& resultats)
 {
     // ICI ON traite les données  : faire des calculs au début de la boucle
     resultats.total = EtudiantEnCours.examen1 + EtudiantEnCours.examen2 + EtudiantEnCours.examenFinal;
@@ -101,4 +118,15 @@ void calculerResultats(info EtudiantEnCours, stats& resultats)
     resultats.moyenneTotal += resultats.total;
     // On a un étuidiant de plus
     resultats.nbEtudiant++;
+}
+
+void calculerMoyenne(stats& moyenne)
+{
+    if (moyenne.nbEtudiant > 0)
+    {
+        moyenne.moyenne1 /= moyenne.nbEtudiant;
+        moyenne.moyenne2 /= moyenne.nbEtudiant;
+        moyenne.moyenne3 /= moyenne.nbEtudiant;
+        moyenne.moyenneTotal /= moyenne.nbEtudiant;
+    }
 }
